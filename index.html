@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Car Rental | Tanger</title>
+</head>
+<body>
+    <a href="https://wa.me/212600000000" class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    
+    <header>
+        <div class="nav">
+            <nav>
+                <ul><a href="#Home">Home</a></ul>
+                <ul><a href="#about">About</a></ul>
+                <ul><a href="#Cars">Cars</a></ul>
+                <ul><a href="#Contact">Contact</a></ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="home" id="Home">
+        <div class="home-content container">
+            <div class="home-img">
+                <img src="img.jpg" alt="">
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-content">
+                    <h1>
+                        <i class="fa-solid fa-plane-departure"></i>
+                        Aerport
+                    </h1>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    
+                       <h1>
+                         <i class="fa-solid fa-train-subway"></i>
+                        Train
+                       </h1>
+                </div>
+            </div>
+        </div>      
+     </section>
+
+    <section class="about" id="about">
+        <div class="ctn">
+            <div class="titre">
+                <h1>About us</h1>
+            </div>
+            <div class="pic">
+                <img src="img2.jpg" alt="">
+            </div>
+        </div>
+    </section> 
+
+    <!--Cars-->
+        <section class="cars" id="Cars">
+        <h2>Our Cars</h2>
+
+        <div class="cards">
+            <!-- Card 1 -->
+            <div class="card">
+                <img src="img3.jpg" alt="Car 1">
+                <h3>PORCHE 911</h3>
+                <p class="price">Rent for day: <span>$45</span></p>
+                <p class="status available">Available</p>
+                <a href="#" class="btn">Book Now</a>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <img src="img5.jpg" alt="Car 2">
+                <h3>BMW M5 E60</h3>
+                <p class="price">Rent for day: <span>$55</span></p>
+                <p class="status available">Available</p>
+                <a href="#" class="btn">Book Now</a>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <img src="img4.jpg" alt="Car 3">
+                <h3></h3>
+                <p class="price"><span></span></p>
+                <p class="status unavailable">SOON</p>
+                <a href="#" class="btn disabled">Unavailable</a>
+            </div>
+        </div>
+        <div class="more">
+            <a href="#"><span>> ></span>Cars</a>
+        </div>
+    </section>
+
+
+
+
+
+
+        <section id="Contact">
+            <form class="contact-form">
+                <h2>Contact Us</h2>
+
+                <input type="text" placeholder="Full Name" required>
+
+                <input type="email" placeholder="Gmail" required>
+
+                <input type="tel" placeholder="Phone Number" required>
+
+                <input type="text" placeholder="Start Point" required>
+
+                <input type="time" required>
+
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    
+
+
+
+
+
+
+
+
+
+     <script src="script.js"></script>
+ <script>
+    window.addEventListener("load", () => {
+        document.querySelector(".nav nav").classList.add("show");
+    });
+
+    const cards = document.querySelectorAll(".card");
+
+    window.addEventListener("load", () => {
+        cards.forEach((card, index) => {
+            setTimeout(() => {
+                card.classList.add("show");
+            }, index * 200);
+        });
+    });
+
+    const img = document.querySelector('.about .pic img');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+});
+
+observer.observe(img);
+
+</script>
+
+</body>
+</html>
